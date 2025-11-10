@@ -1,0 +1,19 @@
+***
+import RPi.GPIO as GPIO, time
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(17, GPIO.IN)
+try:
+    while True:
+        print("Obstacle detected" if GPIO.input(17) == 0 else "No Obstacle")
+        time.sleep(0.5)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+***
+void setup() {
+  Serial.begin(9600); // USB serial communication
+}
+
+void loop() {
+  Serial.println("Hello Pi");
+  delay(2000);
+}
